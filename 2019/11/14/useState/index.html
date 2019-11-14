@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hooks初体验之useState Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。  为什么使用hooks？ 在组建之间复用状态很难 React没有提供将可复用性行为“附加”到组件的途径（例如，把组件连接到store）。如果你使用过React一段时间，你也许会熟悉一些解决此类问题的方案，比如render pr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;assets&#x2F;hooks.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;assets&#x2F;hooks_%E8%A7%A3%E6%83%91.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;assets&#x2F;hooks_%E6%96%87%E6%A1%A3.png">
-<meta property="og:updated_time" content="2019-07-12T06:59:50.512Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;hooks.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;hooks_%E8%A7%A3%E6%83%91.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;hooks_%E6%96%87%E6%A1%A3.png">
+<meta property="og:updated_time" content="2019-11-14T07:21:05.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;assets&#x2F;hooks.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;hooks.png">
 
 
 
@@ -325,9 +325,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      count : <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [ count, setCount ] = React.useState(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>优劣一目了然！当然这只是非常浅显对比，完全不足以说明Hooks的强大！本次不讨论Hooks和class的优劣，因为Hooks属于渐进式方案，和class组件可以在项目中共存。既然共存而非替代，说明class组件依旧有其存在的意义。</p>
-<h2 id="让我疑惑的点"><a href="#让我疑惑的点" class="headerlink" title="让我疑惑的点"></a>让我疑惑的点</h2><p><img src="../assets/hooks.png" alt="hooks文档"></p>
-<p>在初次看到文档中这句话时我sasa的以为setCount无法在条件语句和for循环中使用，这让我非常困惑，因为判断之后更新state状态是非常常见的需求。直到我看到这篇文章——<br><img src="../assets/hooks_%E8%A7%A3%E6%83%91.png" alt="来自掘金"></p>
-<p>看完这篇文章已经有了大致了解，于是我重新去查看了一遍文档，看看是否自己理解上有误。在翻看文档的过程中文档中的一句话彻底解决了这个问题<br><img src="../assets/hooks_%E6%96%87%E6%A1%A3.png" alt="hooks文档"></p>
+<h2 id="让我疑惑的点"><a href="#让我疑惑的点" class="headerlink" title="让我疑惑的点"></a>让我疑惑的点</h2><p><img src="/images/hooks.png" alt="hooks文档"></p>
+<p>在初次看到文档中这句话时我sasa的以为setCount无法在条件语句和for循环中使用，这让我非常困惑，因为判断之后更新state状态是非常常见的需求。直到我看到这篇文章——<br><img src="/images/hooks_%E8%A7%A3%E6%83%91.png" alt="来自掘金"></p>
+<p>看完这篇文章已经有了大致了解，于是我重新去查看了一遍文档，看看是否自己理解上有误。在翻看文档的过程中文档中的一句话彻底解决了这个问题<br><img src="/images/hooks_%E6%96%87%E6%A1%A3.png" alt="hooks文档"></p>
 <p>等号左边的并不是Hooks API，那么不要在条件语句和循环中使用Hooks就不涉及更改数据方法使用问题。</p>
 
       

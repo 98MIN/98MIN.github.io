@@ -451,9 +451,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      count : <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [ count, setCount ] = React.useState(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>优劣一目了然！当然这只是非常浅显对比，完全不足以说明Hooks的强大！本次不讨论Hooks和class的优劣，因为Hooks属于渐进式方案，和class组件可以在项目中共存。既然共存而非替代，说明class组件依旧有其存在的意义。</p>
-<h2 id="让我疑惑的点"><a href="#让我疑惑的点" class="headerlink" title="让我疑惑的点"></a>让我疑惑的点</h2><p><img src="../assets/hooks.png" alt="hooks文档"></p>
-<p>在初次看到文档中这句话时我sasa的以为setCount无法在条件语句和for循环中使用，这让我非常困惑，因为判断之后更新state状态是非常常见的需求。直到我看到这篇文章——<br><img src="../assets/hooks_%E8%A7%A3%E6%83%91.png" alt="来自掘金"></p>
-<p>看完这篇文章已经有了大致了解，于是我重新去查看了一遍文档，看看是否自己理解上有误。在翻看文档的过程中文档中的一句话彻底解决了这个问题<br><img src="../assets/hooks_%E6%96%87%E6%A1%A3.png" alt="hooks文档"></p>
+<h2 id="让我疑惑的点"><a href="#让我疑惑的点" class="headerlink" title="让我疑惑的点"></a>让我疑惑的点</h2><p><img src="/images/hooks.png" alt="hooks文档"></p>
+<p>在初次看到文档中这句话时我sasa的以为setCount无法在条件语句和for循环中使用，这让我非常困惑，因为判断之后更新state状态是非常常见的需求。直到我看到这篇文章——<br><img src="/images/hooks_%E8%A7%A3%E6%83%91.png" alt="来自掘金"></p>
+<p>看完这篇文章已经有了大致了解，于是我重新去查看了一遍文档，看看是否自己理解上有误。在翻看文档的过程中文档中的一句话彻底解决了这个问题<br><img src="/images/hooks_%E6%96%87%E6%A1%A3.png" alt="hooks文档"></p>
 <p>等号左边的并不是Hooks API，那么不要在条件语句和循环中使用Hooks就不涉及更改数据方法使用问题。</p>
 
           
@@ -845,25 +845,25 @@ function palindrome(str) {
         
           
             <h3 id="组件生命周期问题引发的思考"><a href="#组件生命周期问题引发的思考" class="headerlink" title="组件生命周期问题引发的思考"></a>组件生命周期问题引发的思考</h3><h4 id="场景描述"><a href="#场景描述" class="headerlink" title="场景描述"></a>场景描述</h4><p>A组件嵌套了B组件，B组件的子组件C依赖A提供的数据进行数据请求</p>
-<p><img src="../assets/context1.png" alt="嵌套大意图" title="嵌套大意图"></p>
+<p><img src="/images/context1.png" alt="嵌套大意图" title="嵌套大意图"></p>
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
-<li>使用props逐级传递<br><img src="../assets/context2.png" alt="props传递图" title="props传递图"><br>通过props逐级传递，在子组件中获取到值进行消费使用。不过这样的处理方式太过复杂，如果组件嵌套不深倒也还好，一旦组件嵌套太深后期维护会很难。</li>
+<li>使用props逐级传递<br><img src="/images/context2.png" alt="props传递图" title="props传递图"><br>通过props逐级传递，在子组件中获取到值进行消费使用。不过这样的处理方式太过复杂，如果组件嵌套不深倒也还好，一旦组件嵌套太深后期维护会很难。</li>
 <li>使用上下文<blockquote>
 <p>context提供了一个无需为每层组件手动添加props就能在组件树间进行数据传递的方法</p>
 </blockquote>
 </li>
 </ul>
-<p><img src="../assets/context3.png" alt="context传递图" title="context传递图"><br>通过context生成需要的数据传递给子级，子级进行消费，不需要一级一级去传递props</p>
+<p><img src="/images/context3.png" alt="context传递图" title="context传递图"><br>通过context生成需要的数据传递给子级，子级进行消费，不需要一级一级去传递props</p>
 <p>通过比较，果断选择第二种！context无敌！</p>
 <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>一切都向着预期有条不紊的进行~就在这时问题来了——子组件的确通过context跨组件获取到了生产者传递的值，但是却是初始值，并不是更新的值。这里要说明一下，在生产者组件中的componentDidMount中有通过请求去更新context，但是在子组件的componentDidMount中却没有获取到这个值。</p>
 <h4 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h4><p>通过debugger发现在子组件的didMount生命周期里面的context并没有如我们所预料的是更新之后的值。问题出在哪呢？明明已经在生产组件中进行了请求更新数据呀！为什么会获取不到呢？等等…我们在生产组件的didMount里面…猜测有可能是因为生命周期执行顺序的原因，于是进行了一番测试。</p>
-<h4 id="拨开云雾"><a href="#拨开云雾" class="headerlink" title="拨开云雾"></a>拨开云雾</h4><p><img src="../assets/context4.png" alt="context测试" title="context测试"><br>由上图可以看出父子组件渲染流程大致为：</p>
+<h4 id="拨开云雾"><a href="#拨开云雾" class="headerlink" title="拨开云雾"></a>拨开云雾</h4><p><img src="/images/context4.png" alt="context测试" title="context测试"><br>由上图可以看出父子组件渲染流程大致为：</p>
 <ol>
 <li>执行父组件render，然后进入子组件</li>
 <li>执行子组件的render</li>
 <li>如果子组件中还有子组件则重复上面的步骤。</li>
 <li>执行子组件的didMount</li>
-<li>执行父组件的didMount。<br><img src="../assets/context5.png" alt="执行顺序图例" title="执行顺序图例"></li>
+<li>执行父组件的didMount。<br><img src="/images/context5.png" alt="执行顺序图例" title="执行顺序图例"></li>
 </ol>
 <h4 id="最终解决"><a href="#最终解决" class="headerlink" title="最终解决"></a>最终解决</h4><p>既然明白了render的一个关系，就很好解决了，在子组件的update生命周期里面监听，进行数据更行就ok了！nice~</p>
 
