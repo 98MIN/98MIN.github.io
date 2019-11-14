@@ -228,10 +228,10 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/Weird_character/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/currying/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="M">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -247,7 +247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/14/Weird_character/" itemprop="url">Weird_character</a></h1>
+                <a class="post-title-link" href="/2019/09/04/currying/" itemprop="url">currying</a></h1>
         
 
         <div class="post-meta">
@@ -259,8 +259,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-04T09:19:07+08:00">
+                2019-09-04
               </time>
             
 
@@ -299,836 +299,14 @@
       
         
           
-            <h2 id="一个诡异字符引起的吐血排错之旅"><a href="#一个诡异字符引起的吐血排错之旅" class="headerlink" title="一个诡异字符引起的吐血排错之旅"></a>一个诡异字符引起的吐血排错之旅</h2><h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>后端同学通过 swagger 生成了 API 文档，API 名称有点长，为了书写过程中不出现错误，选择复制粘贴到编辑器中然后进行更改（好吧…因为懒〒 ▽ 〒）</p>
-<h3 id="问题上门"><a href="#问题上门" class="headerlink" title="问题上门"></a>问题上门</h3><p>当我沉浸在复制粘贴的喜悦中并深深为自己的机智所折服的时候，浑然不知”那位大人”正悄悄向我逼近。最后一个，完成！</p>
-<p>nice!</p>
-<p>所有的 API 接口终于都定义好了。</p>
-<p>来！测试一把！我仿佛见到<code>success:true</code>正在向我招手~<br>what？？？<br><code>404</code>是什么鬼？<code>%E2%80%8B</code>是什么玩意？为什么会出现在我的 url 里？瞬间懵*…</p>
-<h3 id="艰辛排错路"><a href="#艰辛排错路" class="headerlink" title="艰辛排错路"></a>艰辛排错路</h3><p>凭着多年的经验积累以及敏锐的直觉应该是 url 变量拼接过程出现了问题！<br>嗯，对，没错，直觉果然是错的！<br>不过这都是后话。<br>在一通 debugger 之后发现，完全没问题，url 在发送前是正常的，起码看上去是…<br>那究竟是哪里出了问题呢？嗯？出问题的好像都变量存在中间部分的 url——类似<code>/test/${var}/hello</code>，莫非当变量被夹在二者之间会出现问题？？<br>测一把~</p>
-<p>一通操作…哇塞！果不其然，和变量在哪完全没有关系 ╥﹏╥！思路再一次断了…<br>到底是哪里出现了问题？不应该的啊？怎么会出现<code>%E2%80%8B</code>呢？<br>嗯？这个字符…好像似曾相识啊~看看是什么意思！</p>
-<p>Goolgle 走起~第一条 —— <a href="https://blog.csdn.net/u014271114/article/details/55668115" target="_blank" rel="noopener">一个特殊的字符？（%E2%80%8B）</a>！<br>泪流满面啊！果然还是面向 Google 编程比较管用！</p>
-<p>虽说前面一通操作猛如虎，定睛一看原地杵，但是却也加深了自身的一些记忆，以后再遇到类似问题不会毫无印象，又重新 Google 一把~【不过说真的，没有前面犯二的排错路程，这文章还真不好写…】</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/useState/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/useState/" itemprop="url">useState</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hooks初体验之useState"><a href="#Hooks初体验之useState" class="headerlink" title="Hooks初体验之useState"></a>Hooks初体验之useState</h1><blockquote>
-<p>Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。</p>
-</blockquote>
-<h2 id="为什么使用hooks？"><a href="#为什么使用hooks？" class="headerlink" title="为什么使用hooks？"></a>为什么使用hooks？</h2><ul>
-<li>在组建之间复用状态很难<blockquote>
-<p>React没有提供将可复用性行为“附加”到组件的途径（例如，把组件连接到store）。如果你使用过React一段时间，你也许会熟悉一些解决此类问题的方案，比如render props和高阶组件。但是这类方案需要你重新组织你的组件结构，这可能会很麻烦，是你的代码难以理解。</p>
-</blockquote>
-</li>
-<li>复杂组件变得难以理解<blockquote>
-<p>我们经常维护一些组件，组件起初很简单，但是组件会被状态逻辑和副作用充斥。每个生命周期常常包含一些不相关的逻辑。例如，组件经常在<code>componentDidMount</code>和<code>componentDidUpdate</code>中获取数据。但是同一个<code>componentDidMount</code>中可能也包含很多其他逻辑，如设置事件监听，而之后需要在组件卸载的生命周期<code>componentWillUnmount</code>中清除。完全不相关的代码却在同一个方法里很容易产生bug。</p>
-</blockquote>
-</li>
-<li>难以理解的class<blockquote>
-<p>你必须去理解JavaScript中<code>this</code>的工作方式，这与其他语言存在巨大差异。还不能忘记绑定事件处理器。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Hooks是什么？"><a href="#Hooks是什么？" class="headerlink" title="Hooks是什么？"></a>Hooks是什么？</h2><blockquote>
-<p>Hooks是一个特殊的函数，它可以让你“钩入”React特性。</p>
-</blockquote>
-<h2 id="Hooks-API-——-useState"><a href="#Hooks-API-——-useState" class="headerlink" title="Hooks API —— useState"></a>Hooks API —— useState</h2><p>以前你如果想编写有状态的组件那么你不得不编写class组件，一堆的模板代码使你苦不堪言，但是现在你可以有更好的方式来实现它。为什么不得不编写class组件呢？因为函数式组件无法添加state，所以我们如果意识到需要添加state就必须转化为class组件。现在，函数式组件也可以通过hooks来添加状态。nice!!<br>让我们来看一个对比:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      count : <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [ count, setCount ] = React.useState(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优劣一目了然！当然这只是非常浅显对比，完全不足以说明Hooks的强大！本次不讨论Hooks和class的优劣，因为Hooks属于渐进式方案，和class组件可以在项目中共存。既然共存而非替代，说明class组件依旧有其存在的意义。</p>
-<h2 id="让我疑惑的点"><a href="#让我疑惑的点" class="headerlink" title="让我疑惑的点"></a>让我疑惑的点</h2><p><img src="/images/hooks.png" alt="hooks文档"></p>
-<p>在初次看到文档中这句话时我sasa的以为setCount无法在条件语句和for循环中使用，这让我非常困惑，因为判断之后更新state状态是非常常见的需求。直到我看到这篇文章——<br><img src="/images/hooks_%E8%A7%A3%E6%83%91.png" alt="来自掘金"></p>
-<p>看完这篇文章已经有了大致了解，于是我重新去查看了一遍文档，看看是否自己理解上有误。在翻看文档的过程中文档中的一句话彻底解决了这个问题<br><img src="/images/hooks_%E6%96%87%E6%A1%A3.png" alt="hooks文档"></p>
-<p>等号左边的并不是Hooks API，那么不要在条件语句和循环中使用Hooks就不涉及更改数据方法使用问题。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/palindrome/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/palindrome/" itemprop="url">palindrome</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="什么是回文字符串"><a href="#什么是回文字符串" class="headerlink" title="什么是回文字符串"></a>什么是回文字符串</h3><blockquote>
-<p>回文字符串就是一个正向读和反向读都一样的字符串</p>
-</blockquote>
-<h3 id="编写一个函数判断字符串是否是回文字符串"><a href="#编写一个函数判断字符串是否是回文字符串" class="headerlink" title="编写一个函数判断字符串是否是回文字符串"></a>编写一个函数判断字符串是否是回文字符串</h3><pre><code>let str = &apos;level&apos;
-
-function palindromeString(str){
-  return str === str.split(&apos;&apos;).reverse().join(&apos;&apos;)
-}
-
-palindrome(str) --&gt; true</code></pre><h3 id="编写一个函数获取当前字符串中最长子字符串"><a href="#编写一个函数获取当前字符串中最长子字符串" class="headerlink" title="编写一个函数获取当前字符串中最长子字符串"></a>编写一个函数获取当前字符串中最长子字符串</h3><pre><code>function longestPalindrome(str) {
-  let result = &apos;&apos;
-
-  for (let i = 0; i &lt; str.length; i++) {
-    let current_string = &apos;&apos;
-
-    for (let j = i; j &lt; str.length; j++) {
-      current_string = str.slice(i, j + 1)
-
-      if (palindrome(current_string) &amp;&amp; current_string.length &gt; result.length) {
-        result = current_string
-      }
-    }
-  }
-
-  return result
-}
-
-function palindrome(str) {
-  return  str === str.split(&apos;&apos;).reverse().join(&apos;&apos;)
-}</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/Map_Set/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/Map_Set/" itemprop="url">Map_Set</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Set-和-WeakSet"><a href="#Set-和-WeakSet" class="headerlink" title="Set 和 WeakSet"></a>Set 和 WeakSet</h2><blockquote>
-<p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值是唯一的，没有重复的值。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/life_cycle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/life_cycle/" itemprop="url">life_cycle</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="组件生命周期问题引发的思考"><a href="#组件生命周期问题引发的思考" class="headerlink" title="组件生命周期问题引发的思考"></a>组件生命周期问题引发的思考</h3><h4 id="场景描述"><a href="#场景描述" class="headerlink" title="场景描述"></a>场景描述</h4><p>A组件嵌套了B组件，B组件的子组件C依赖A提供的数据进行数据请求</p>
-<p><img src="/images/context1.png" alt="嵌套大意图" title="嵌套大意图"></p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
-<li>使用props逐级传递<br><img src="/images/context2.png" alt="props传递图" title="props传递图"><br>通过props逐级传递，在子组件中获取到值进行消费使用。不过这样的处理方式太过复杂，如果组件嵌套不深倒也还好，一旦组件嵌套太深后期维护会很难。</li>
-<li>使用上下文<blockquote>
-<p>context提供了一个无需为每层组件手动添加props就能在组件树间进行数据传递的方法</p>
-</blockquote>
-</li>
-</ul>
-<p><img src="/images/context3.png" alt="context传递图" title="context传递图"><br>通过context生成需要的数据传递给子级，子级进行消费，不需要一级一级去传递props</p>
-<p>通过比较，果断选择第二种！context无敌！</p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>一切都向着预期有条不紊的进行~就在这时问题来了——子组件的确通过context跨组件获取到了生产者传递的值，但是却是初始值，并不是更新的值。这里要说明一下，在生产者组件中的componentDidMount中有通过请求去更新context，但是在子组件的componentDidMount中却没有获取到这个值。</p>
-<h4 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h4><p>通过debugger发现在子组件的didMount生命周期里面的context并没有如我们所预料的是更新之后的值。问题出在哪呢？明明已经在生产组件中进行了请求更新数据呀！为什么会获取不到呢？等等…我们在生产组件的didMount里面…猜测有可能是因为生命周期执行顺序的原因，于是进行了一番测试。</p>
-<h4 id="拨开云雾"><a href="#拨开云雾" class="headerlink" title="拨开云雾"></a>拨开云雾</h4><p><img src="/images/context4.png" alt="context测试" title="context测试"><br>由上图可以看出父子组件渲染流程大致为：</p>
-<ol>
-<li>执行父组件render，然后进入子组件</li>
-<li>执行子组件的render</li>
-<li>如果子组件中还有子组件则重复上面的步骤。</li>
-<li>执行子组件的didMount</li>
-<li>执行父组件的didMount。<br><img src="/images/context5.png" alt="执行顺序图例" title="执行顺序图例"></li>
-</ol>
-<h4 id="最终解决"><a href="#最终解决" class="headerlink" title="最终解决"></a>最终解决</h4><p>既然明白了render的一个关系，就很好解决了，在子组件的update生命周期里面监听，进行数据更行就ok了！nice~</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/debounceAndThrottle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/debounceAndThrottle/" itemprop="url">debounceAndThrottle</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="防抖节流"><a href="#防抖节流" class="headerlink" title="防抖节流"></a>防抖节流</h3><h4 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h4><blockquote>
-<p>当需要执行的方法频繁被触发时，只有当中间间隔超过指定时间间隔，方法才会执行</p>
-</blockquote>
-<h4 id="防抖的使用场景："><a href="#防抖的使用场景：" class="headerlink" title="防抖的使用场景："></a>防抖的使用场景：</h4><ul>
-<li>联想输入框：用户输入时要进行联想反馈</li>
-<li>监听屏幕resize：在监听函数外包裹一层防抖函数</li>
-</ul>
-<h4 id="防抖函数实现"><a href="#防抖函数实现" class="headerlink" title="防抖函数实现"></a>防抖函数实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn,delay</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    clearTimeOut(timer)</span><br><span class="line">    timer = setTimeOut(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      fn.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">    &#125;,delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h4><blockquote>
-<p>当需要执行的方法频繁被触发，只有经过指定时间间隔之后方法才会被触发。</p>
-</blockquote>
-<h4 id="节流的使用场景"><a href="#节流的使用场景" class="headerlink" title="节流的使用场景"></a>节流的使用场景</h4><ul>
-<li>监听滚动事件</li>
-<li>鼠标不断点击触发</li>
-</ul>
-<h4 id="节流函数实现"><a href="#节流函数实现" class="headerlink" title="节流函数实现"></a>节流函数实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> time = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newDate = <span class="built_in">Date</span>.now()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (newDate - time &gt; delay) &#123;</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, [...arguments])</span><br><span class="line">      time = newDate</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/currying/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/currying/" itemprop="url">currying</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h3><p>参考文章: <a href="https://github.com/mqyqingfeng/Blog/issues/42" target="_blank" rel="noopener">js系列文章之函数柯里化</a></p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><blockquote>
+            <h3 id="&#x67EF;&#x91CC;&#x5316;"><a href="#&#x67EF;&#x91CC;&#x5316;" class="headerlink" title="&#x67EF;&#x91CC;&#x5316;"></a>&#x67EF;&#x91CC;&#x5316;</h3><p>&#x53C2;&#x8003;&#x6587;&#x7AE0;: <a href="https://github.com/mqyqingfeng/Blog/issues/42" target="_blank" rel="noopener">js&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x4E4B;&#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;</a></p>
+<h4 id="&#x5B9A;&#x4E49;"><a href="#&#x5B9A;&#x4E49;" class="headerlink" title="&#x5B9A;&#x4E49;"></a>&#x5B9A;&#x4E49;</h4><blockquote>
 <p>In mathematics and computer science, currying is the technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument.</p>
 </blockquote>
-<p>翻译成中文:</p>
-<p>在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术。</p>
-<h4 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h4><p>通过闭包将参数保存并判断是否达到执行函数的临界点（参数个数是否大于或等于等待执行的函数参数个数）。达到则开始执行，否则继续执行Currying函数。</p>
-<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 函数柯里化</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; fn</span></span><br><span class="line"><span class="comment"> * @param  &#123;...any&#125; params</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying</span>(<span class="params">fn, ...params</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _args = [...params, ...args]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (_args.length &gt;= fn.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, _args)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> currying.call(<span class="keyword">this</span>, fn, ..._args)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&#x7FFB;&#x8BD1;&#x6210;&#x4E2D;&#x6587;:</p>
+<p>&#x5728;&#x6570;&#x5B66;&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x4E2D;&#xFF0C;&#x67EF;&#x91CC;&#x5316;&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x7CFB;&#x5217;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x7684;&#x6280;&#x672F;&#x3002;</p>
+<h4 id="&#x7406;&#x89E3;"><a href="#&#x7406;&#x89E3;" class="headerlink" title="&#x7406;&#x89E3;"></a>&#x7406;&#x89E3;</h4><p>&#x901A;&#x8FC7;&#x95ED;&#x5305;&#x5C06;&#x53C2;&#x6570;&#x4FDD;&#x5B58;&#x5E76;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8FBE;&#x5230;&#x6267;&#x884C;&#x51FD;&#x6570;&#x7684;&#x4E34;&#x754C;&#x70B9;&#xFF08;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#xFF09;&#x3002;&#x8FBE;&#x5230;&#x5219;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x5426;&#x5219;&#x7EE7;&#x7EED;&#x6267;&#x884C;Currying&#x51FD;&#x6570;&#x3002;</p>
+<h4 id="&#x5B9E;&#x73B0;"><a href="#&#x5B9E;&#x73B0;" class="headerlink" title="&#x5B9E;&#x73B0;"></a>&#x5B9E;&#x73B0;</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;</span></span><br><span class="line"><span class="comment"> * @param {*} fn</span></span><br><span class="line"><span class="comment"> * @param  {...any} params</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying</span>(<span class="params">fn, ...params</span>) </span>{</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> _args = [...params, ...args]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (_args.length &gt;= fn.length) {</span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, _args)</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="keyword">return</span> currying.call(<span class="keyword">this</span>, fn, ..._args)</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1177,10 +355,10 @@ function palindrome(str) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/create-react-app/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/life-cycle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="M">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -1196,7 +374,7 @@ function palindrome(str) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/14/create-react-app/" itemprop="url">create-react-app</a></h1>
+                <a class="post-title-link" href="/2019/08/07/life-cycle/" itemprop="url">life-cycle</a></h1>
         
 
         <div class="post-meta">
@@ -1208,8 +386,8 @@ function palindrome(str) {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T14:11:34+08:00">
+                2019-08-07
               </time>
             
 
@@ -1248,126 +426,29 @@ function palindrome(str) {
       
         
           
-            <h2 id="脚手架变动之后的sass引用问题"><a href="#脚手架变动之后的sass引用问题" class="headerlink" title="脚手架变动之后的sass引用问题"></a>脚手架变动之后的sass引用问题</h2>
-          
-        
-      
-    </div>
-    
-    
-    
+            <h3 id="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"><a href="#&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"></a>&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;</h3><h4 id="&#x573A;&#x666F;&#x63CF;&#x8FF0;"><a href="#&#x573A;&#x666F;&#x63CF;&#x8FF0;" class="headerlink" title="&#x573A;&#x666F;&#x63CF;&#x8FF0;"></a>&#x573A;&#x666F;&#x63CF;&#x8FF0;</h4><p>A&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E86;B&#x7EC4;&#x4EF6;&#xFF0C;B&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;C&#x4F9D;&#x8D56;A&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8BF7;&#x6C42;</p>
+<p><img src="/2019/08/07/life-cycle/context1.png" alt="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;" title="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;"></p>
+<h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6848;"></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;</h4><ul>
+<li>&#x4F7F;&#x7528;props&#x9010;&#x7EA7;&#x4F20;&#x9012;<br><img src="/2019/08/07/life-cycle/context2.png" alt="props&#x4F20;&#x9012;&#x56FE;" title="props&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;props&#x9010;&#x7EA7;&#x4F20;&#x9012;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x503C;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#x4F7F;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x592A;&#x8FC7;&#x590D;&#x6742;&#xFF0C;&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E0D;&#x6DF1;&#x5012;&#x4E5F;&#x8FD8;&#x597D;&#xFF0C;&#x4E00;&#x65E6;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x592A;&#x6DF1;&#x540E;&#x671F;&#x7EF4;&#x62A4;&#x4F1A;&#x5F88;&#x96BE;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x4E0A;&#x4E0B;&#x6587;<blockquote>
+<p>context&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x9700;&#x4E3A;&#x6BCF;&#x5C42;&#x7EC4;&#x4EF6;&#x624B;&#x52A8;&#x6DFB;&#x52A0;props&#x5C31;&#x80FD;&#x5728;&#x7EC4;&#x4EF6;&#x6811;&#x95F4;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7684;&#x65B9;&#x6CD5;</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="/2019/08/07/life-cycle/context3.png" alt="context&#x4F20;&#x9012;&#x56FE;" title="context&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;context&#x751F;&#x6210;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EA7;&#xFF0C;&#x5B50;&#x7EA7;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x53BB;&#x4F20;&#x9012;props</p>
+<p>&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#xFF0C;&#x679C;&#x65AD;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x79CD;&#xFF01;context&#x65E0;&#x654C;&#xFF01;</p>
+<h4 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h4><p>&#x4E00;&#x5207;&#x90FD;&#x5411;&#x7740;&#x9884;&#x671F;&#x6709;&#x6761;&#x4E0D;&#x7D0A;&#x7684;&#x8FDB;&#x884C;~&#x5C31;&#x5728;&#x8FD9;&#x65F6;&#x95EE;&#x9898;&#x6765;&#x4E86;&#x2014;&#x2014;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x786E;&#x901A;&#x8FC7;context&#x8DE8;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x751F;&#x4EA7;&#x8005;&#x4F20;&#x9012;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x662F;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x66F4;&#x65B0;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;&#x751F;&#x4EA7;&#x8005;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;componentDidMount&#x4E2D;&#x6709;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x53BB;&#x66F4;&#x65B0;context&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;componentDidMount&#x4E2D;&#x5374;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x8FD9;&#x4E2A;&#x503C;&#x3002;</p>
+<h4 id="&#x95EE;&#x9898;&#x6392;&#x67E5;"><a href="#&#x95EE;&#x9898;&#x6392;&#x67E5;" class="headerlink" title="&#x95EE;&#x9898;&#x6392;&#x67E5;"></a>&#x95EE;&#x9898;&#x6392;&#x67E5;</h4><p>&#x901A;&#x8FC7;debugger&#x53D1;&#x73B0;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x7684;context&#x5E76;&#x6CA1;&#x6709;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x9884;&#x6599;&#x7684;&#x662F;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x7684;&#x503C;&#x3002;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x5462;&#xFF1F;&#x660E;&#x660E;&#x5DF2;&#x7ECF;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;&#x8BF7;&#x6C42;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5440;&#xFF01;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x5462;&#xFF1F;&#x7B49;&#x7B49;&#x2026;&#x6211;&#x4EEC;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x7684;didMount&#x91CC;&#x9762;&#x2026;&#x731C;&#x6D4B;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4E8E;&#x662F;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x756A;&#x6D4B;&#x8BD5;&#x3002;</p>
+<h4 id="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"><a href="#&#x62E8;&#x5F00;&#x4E91;&#x96FE;" class="headerlink" title="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"></a>&#x62E8;&#x5F00;&#x4E91;&#x96FE;</h4><p><img src="/2019/08/07/life-cycle/context4.png" alt="context&#x6D4B;&#x8BD5;" title="context&#x6D4B;&#x8BD5;"><br>&#x7531;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x5927;&#x81F4;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;render&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</li>
+<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render</li>
+<li>&#x5982;&#x679C;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FD8;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x5219;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x3002;</li>
+<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount</li>
+<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;&#x7684;didMount&#x3002;<br><img src="/2019/08/07/life-cycle/context5.png" alt="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;" title="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;"></li>
+</ol>
+<h4 id="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"><a href="#&#x6700;&#x7EC8;&#x89E3;&#x51B3;" class="headerlink" title="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"></a>&#x6700;&#x7EC8;&#x89E3;&#x51B3;</h4><p>&#x65E2;&#x7136;&#x660E;&#x767D;&#x4E86;render&#x7684;&#x4E00;&#x4E2A;&#x5173;&#x7CFB;&#xFF0C;&#x5C31;&#x5F88;&#x597D;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;update&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x76D1;&#x542C;&#xFF0C;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x66F4;&#x884C;&#x5C31;ok&#x4E86;&#xFF01;nice~</p>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/clone/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/14/clone/" itemprop="url">clone</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="浅克隆"><a href="#浅克隆" class="headerlink" title="浅克隆"></a>浅克隆</h2>
           
         
       
@@ -1437,7 +518,7 @@ function palindrome(str) {
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">M</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -1448,7 +529,7 @@ function palindrome(str) {
               
                 <a href="/archives%7C%7C%20archive">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1493,7 +574,7 @@ function palindrome(str) {
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">M</span>
 
   
 </div>

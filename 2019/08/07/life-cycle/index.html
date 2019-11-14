@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="组件生命周期问题引发的思考场景描述A组件嵌套了B组件，B组件的子组件C依赖A提供的数据进行数据请求  解决方案 使用props逐级传递通过props逐级传递，在子组件中获取到值进行消费使用。不过这样的处理方式太过复杂，如果组件嵌套不深倒也还好，一旦组件嵌套太深后期维护会很难。 使用上下文 context提供了一个无需为每层组件手动添加props就能在组件树间进行数据传递的方法    通过conte">
+<meta name="description" content="&amp;#x7EC4;&amp;#x4EF6;&amp;#x751F;&amp;#x547D;&amp;#x5468;&amp;#x671F;&amp;#x95EE;&amp;#x9898;&amp;#x5F15;&amp;#x53D1;&amp;#x7684;&amp;#x601D;&amp;#x8003;&amp;#x573A;&amp;#x666F;&amp;#x63CF;&amp;#x8FF0;A&amp;#x7EC4;&amp;#x4EF6;&amp;#x5D4C;&amp;#x5957;&amp;#x4E86;B&amp;#x7EC4;&amp;#x4EF6;&amp;#xFF0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="life_cycle">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;life_cycle&#x2F;index.html">
+<meta property="og:title" content="life-cycle">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="组件生命周期问题引发的思考场景描述A组件嵌套了B组件，B组件的子组件C依赖A提供的数据进行数据请求  解决方案 使用props逐级传递通过props逐级传递，在子组件中获取到值进行消费使用。不过这样的处理方式太过复杂，如果组件嵌套不深倒也还好，一旦组件嵌套太深后期维护会很难。 使用上下文 context提供了一个无需为每层组件手动添加props就能在组件树间进行数据传递的方法    通过conte">
+<meta property="og:description" content="&amp;#x7EC4;&amp;#x4EF6;&amp;#x751F;&amp;#x547D;&amp;#x5468;&amp;#x671F;&amp;#x95EE;&amp;#x9898;&amp;#x5F15;&amp;#x53D1;&amp;#x7684;&amp;#x601D;&amp;#x8003;&amp;#x573A;&amp;#x666F;&amp;#x63CF;&amp;#x8FF0;A&amp;#x7EC4;&amp;#x4EF6;&amp;#x5D4C;&amp;#x5957;&amp;#x4E86;B&amp;#x7EC4;&amp;#x4EF6;&amp;#xFF0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;context1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;context2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;context3.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;context4.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;context5.png">
-<meta property="og:updated_time" content="2019-11-14T07:20:15.514Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;context1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;context2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;context3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;context4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;context5.png">
+<meta property="og:updated_time" content="2019-11-14T07:46:47.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;context1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;07&#x2F;life-cycle&#x2F;context1.png">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/14/life_cycle/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/life-cycle/"/>
 
 
 
 
 
-  <title>life_cycle | Hexo</title>
+  <title>life-cycle | Hexo</title>
   
 
 
@@ -236,10 +236,10 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/life_cycle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/life-cycle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="M">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -253,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">life_cycle</h1>
+          <h1 class="post-title" itemprop="name headline">life-cycle</h1>
         
 
         <div class="post-meta">
@@ -265,8 +265,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T15:11:52+08:00">
-                2019-11-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T14:11:34+08:00">
+                2019-08-07
               </time>
             
 
@@ -303,28 +303,28 @@
       
 
       
-        <h3 id="组件生命周期问题引发的思考"><a href="#组件生命周期问题引发的思考" class="headerlink" title="组件生命周期问题引发的思考"></a>组件生命周期问题引发的思考</h3><h4 id="场景描述"><a href="#场景描述" class="headerlink" title="场景描述"></a>场景描述</h4><p>A组件嵌套了B组件，B组件的子组件C依赖A提供的数据进行数据请求</p>
-<p><img src="/images/context1.png" alt="嵌套大意图" title="嵌套大意图"></p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
-<li>使用props逐级传递<br><img src="/images/context2.png" alt="props传递图" title="props传递图"><br>通过props逐级传递，在子组件中获取到值进行消费使用。不过这样的处理方式太过复杂，如果组件嵌套不深倒也还好，一旦组件嵌套太深后期维护会很难。</li>
-<li>使用上下文<blockquote>
-<p>context提供了一个无需为每层组件手动添加props就能在组件树间进行数据传递的方法</p>
+        <h3 id="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"><a href="#&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"></a>&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;</h3><h4 id="&#x573A;&#x666F;&#x63CF;&#x8FF0;"><a href="#&#x573A;&#x666F;&#x63CF;&#x8FF0;" class="headerlink" title="&#x573A;&#x666F;&#x63CF;&#x8FF0;"></a>&#x573A;&#x666F;&#x63CF;&#x8FF0;</h4><p>A&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E86;B&#x7EC4;&#x4EF6;&#xFF0C;B&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;C&#x4F9D;&#x8D56;A&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8BF7;&#x6C42;</p>
+<p><img src="/2019/08/07/life-cycle/context1.png" alt="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;" title="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;"></p>
+<h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6848;"></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;</h4><ul>
+<li>&#x4F7F;&#x7528;props&#x9010;&#x7EA7;&#x4F20;&#x9012;<br><img src="/2019/08/07/life-cycle/context2.png" alt="props&#x4F20;&#x9012;&#x56FE;" title="props&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;props&#x9010;&#x7EA7;&#x4F20;&#x9012;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x503C;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#x4F7F;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x592A;&#x8FC7;&#x590D;&#x6742;&#xFF0C;&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E0D;&#x6DF1;&#x5012;&#x4E5F;&#x8FD8;&#x597D;&#xFF0C;&#x4E00;&#x65E6;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x592A;&#x6DF1;&#x540E;&#x671F;&#x7EF4;&#x62A4;&#x4F1A;&#x5F88;&#x96BE;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x4E0A;&#x4E0B;&#x6587;<blockquote>
+<p>context&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x9700;&#x4E3A;&#x6BCF;&#x5C42;&#x7EC4;&#x4EF6;&#x624B;&#x52A8;&#x6DFB;&#x52A0;props&#x5C31;&#x80FD;&#x5728;&#x7EC4;&#x4EF6;&#x6811;&#x95F4;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7684;&#x65B9;&#x6CD5;</p>
 </blockquote>
 </li>
 </ul>
-<p><img src="/images/context3.png" alt="context传递图" title="context传递图"><br>通过context生成需要的数据传递给子级，子级进行消费，不需要一级一级去传递props</p>
-<p>通过比较，果断选择第二种！context无敌！</p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>一切都向着预期有条不紊的进行~就在这时问题来了——子组件的确通过context跨组件获取到了生产者传递的值，但是却是初始值，并不是更新的值。这里要说明一下，在生产者组件中的componentDidMount中有通过请求去更新context，但是在子组件的componentDidMount中却没有获取到这个值。</p>
-<h4 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h4><p>通过debugger发现在子组件的didMount生命周期里面的context并没有如我们所预料的是更新之后的值。问题出在哪呢？明明已经在生产组件中进行了请求更新数据呀！为什么会获取不到呢？等等…我们在生产组件的didMount里面…猜测有可能是因为生命周期执行顺序的原因，于是进行了一番测试。</p>
-<h4 id="拨开云雾"><a href="#拨开云雾" class="headerlink" title="拨开云雾"></a>拨开云雾</h4><p><img src="/images/context4.png" alt="context测试" title="context测试"><br>由上图可以看出父子组件渲染流程大致为：</p>
+<p><img src="/2019/08/07/life-cycle/context3.png" alt="context&#x4F20;&#x9012;&#x56FE;" title="context&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;context&#x751F;&#x6210;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EA7;&#xFF0C;&#x5B50;&#x7EA7;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x53BB;&#x4F20;&#x9012;props</p>
+<p>&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#xFF0C;&#x679C;&#x65AD;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x79CD;&#xFF01;context&#x65E0;&#x654C;&#xFF01;</p>
+<h4 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h4><p>&#x4E00;&#x5207;&#x90FD;&#x5411;&#x7740;&#x9884;&#x671F;&#x6709;&#x6761;&#x4E0D;&#x7D0A;&#x7684;&#x8FDB;&#x884C;~&#x5C31;&#x5728;&#x8FD9;&#x65F6;&#x95EE;&#x9898;&#x6765;&#x4E86;&#x2014;&#x2014;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x786E;&#x901A;&#x8FC7;context&#x8DE8;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x751F;&#x4EA7;&#x8005;&#x4F20;&#x9012;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x662F;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x66F4;&#x65B0;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;&#x751F;&#x4EA7;&#x8005;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;componentDidMount&#x4E2D;&#x6709;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x53BB;&#x66F4;&#x65B0;context&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;componentDidMount&#x4E2D;&#x5374;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x8FD9;&#x4E2A;&#x503C;&#x3002;</p>
+<h4 id="&#x95EE;&#x9898;&#x6392;&#x67E5;"><a href="#&#x95EE;&#x9898;&#x6392;&#x67E5;" class="headerlink" title="&#x95EE;&#x9898;&#x6392;&#x67E5;"></a>&#x95EE;&#x9898;&#x6392;&#x67E5;</h4><p>&#x901A;&#x8FC7;debugger&#x53D1;&#x73B0;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x7684;context&#x5E76;&#x6CA1;&#x6709;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x9884;&#x6599;&#x7684;&#x662F;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x7684;&#x503C;&#x3002;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x5462;&#xFF1F;&#x660E;&#x660E;&#x5DF2;&#x7ECF;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;&#x8BF7;&#x6C42;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5440;&#xFF01;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x5462;&#xFF1F;&#x7B49;&#x7B49;&#x2026;&#x6211;&#x4EEC;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x7684;didMount&#x91CC;&#x9762;&#x2026;&#x731C;&#x6D4B;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4E8E;&#x662F;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x756A;&#x6D4B;&#x8BD5;&#x3002;</p>
+<h4 id="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"><a href="#&#x62E8;&#x5F00;&#x4E91;&#x96FE;" class="headerlink" title="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"></a>&#x62E8;&#x5F00;&#x4E91;&#x96FE;</h4><p><img src="/2019/08/07/life-cycle/context4.png" alt="context&#x6D4B;&#x8BD5;" title="context&#x6D4B;&#x8BD5;"><br>&#x7531;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x5927;&#x81F4;&#x4E3A;&#xFF1A;</p>
 <ol>
-<li>执行父组件render，然后进入子组件</li>
-<li>执行子组件的render</li>
-<li>如果子组件中还有子组件则重复上面的步骤。</li>
-<li>执行子组件的didMount</li>
-<li>执行父组件的didMount。<br><img src="/images/context5.png" alt="执行顺序图例" title="执行顺序图例"></li>
+<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;render&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</li>
+<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render</li>
+<li>&#x5982;&#x679C;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FD8;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x5219;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x3002;</li>
+<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount</li>
+<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;&#x7684;didMount&#x3002;<br><img src="/2019/08/07/life-cycle/context5.png" alt="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;" title="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;"></li>
 </ol>
-<h4 id="最终解决"><a href="#最终解决" class="headerlink" title="最终解决"></a>最终解决</h4><p>既然明白了render的一个关系，就很好解决了，在子组件的update生命周期里面监听，进行数据更行就ok了！nice~</p>
+<h4 id="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"><a href="#&#x6700;&#x7EC8;&#x89E3;&#x51B3;" class="headerlink" title="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"></a>&#x6700;&#x7EC8;&#x89E3;&#x51B3;</h4><p>&#x65E2;&#x7136;&#x660E;&#x767D;&#x4E86;render&#x7684;&#x4E00;&#x4E2A;&#x5173;&#x7CFB;&#xFF0C;&#x5C31;&#x5F88;&#x597D;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;update&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x76D1;&#x542C;&#xFF0C;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x66F4;&#x884C;&#x5C31;ok&#x4E86;&#xFF01;nice~</p>
 
       
     </div>
@@ -349,18 +349,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/14/debounceAndThrottle/" rel="next" title="debounceAndThrottle">
-                <i class="fa fa-chevron-left"></i> debounceAndThrottle
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/14/Map_Set/" rel="prev" title="Map_Set">
-                Map_Set <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/04/currying/" rel="prev" title="currying">
+                currying <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -427,7 +423,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">M</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -438,7 +434,7 @@
               
                 <a href="/archives%7C%7C%20archive">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -499,7 +495,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">M</span>
 
   
 </div>
