@@ -1,124 +1,76 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
   };
 </script>
 
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/">
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>Hexo</title>
   
@@ -128,165 +80,129 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Hexo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
-  
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/currying/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="M">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/04/currying/" itemprop="url">currying</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/04/currying/" class="post-title-link" itemprop="url">currying</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">发表于</span>
               
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-04T09:19:07+08:00">
-                2019-09-04
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="创建时间：2019-09-04 09:19:07 / 修改时间：09:44:44" itemprop="dateCreated datePublished" datetime="2019-09-04T09:19:07+08:00">2019-09-04</time>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -294,126 +210,71 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h3 id="&#x67EF;&#x91CC;&#x5316;"><a href="#&#x67EF;&#x91CC;&#x5316;" class="headerlink" title="&#x67EF;&#x91CC;&#x5316;"></a>&#x67EF;&#x91CC;&#x5316;</h3><p>&#x53C2;&#x8003;&#x6587;&#x7AE0;: <a href="https://github.com/mqyqingfeng/Blog/issues/42" target="_blank" rel="noopener">js&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x4E4B;&#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;</a></p>
-<h4 id="&#x5B9A;&#x4E49;"><a href="#&#x5B9A;&#x4E49;" class="headerlink" title="&#x5B9A;&#x4E49;"></a>&#x5B9A;&#x4E49;</h4><blockquote>
-<p>In mathematics and computer science, currying is the technique of translating the evaluation of a function that takes multiple arguments into evaluating a sequence of functions, each with a single argument.</p>
-</blockquote>
-<p>&#x7FFB;&#x8BD1;&#x6210;&#x4E2D;&#x6587;:</p>
-<p>&#x5728;&#x6570;&#x5B66;&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x4E2D;&#xFF0C;&#x67EF;&#x91CC;&#x5316;&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x7CFB;&#x5217;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x7684;&#x6280;&#x672F;&#x3002;</p>
-<h4 id="&#x7406;&#x89E3;"><a href="#&#x7406;&#x89E3;" class="headerlink" title="&#x7406;&#x89E3;"></a>&#x7406;&#x89E3;</h4><p>&#x901A;&#x8FC7;&#x95ED;&#x5305;&#x5C06;&#x53C2;&#x6570;&#x4FDD;&#x5B58;&#x5E76;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8FBE;&#x5230;&#x6267;&#x884C;&#x51FD;&#x6570;&#x7684;&#x4E34;&#x754C;&#x70B9;&#xFF08;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x7B49;&#x5F85;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#xFF09;&#x3002;&#x8FBE;&#x5230;&#x5219;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x5426;&#x5219;&#x7EE7;&#x7EED;&#x6267;&#x884C;Currying&#x51FD;&#x6570;&#x3002;</p>
-<h4 id="&#x5B9E;&#x73B0;"><a href="#&#x5B9E;&#x73B0;" class="headerlink" title="&#x5B9E;&#x73B0;"></a>&#x5B9E;&#x73B0;</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;</span></span><br><span class="line"><span class="comment"> * @param {*} fn</span></span><br><span class="line"><span class="comment"> * @param  {...any} params</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying</span>(<span class="params">fn, ...params</span>) </span>{</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> _args = [...params, ...args]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (_args.length &gt;= fn.length) {</span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, _args)</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="keyword">return</span> currying.call(<span class="keyword">this</span>, fn, ..._args)</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-          
+          <h3 id="&#x67EF;&#x91CC;&#x5316;"><a href="#&#x67EF;&#x91CC;&#x5316;" class="headerlink" title="&#x67EF;&#x91CC;&#x5316;"></a>&#x67EF;&#x91CC;&#x5316;</h3><p>&#x53C2;&#x8003;&#x6587;&#x7AE0;: <a href="https://github.com/mqyqingfeng/Blog/issues/42" target="_blank" rel="noopener">js&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x4E4B;&#x51FD;&#x6570;&#x67EF;&#x91CC;&#x5316;</a></p><h4 id="&#x5B9A;&#x4E49;"><a href="#&#x5B9A;&#x4E49;" class="headerlink" title="&#x5B9A;&#x4E49;"></a>&#x5B9A;&#x4E49;</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/04/currying/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/life-cycle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="M">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Hexo">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/07/life-cycle/" itemprop="url">life-cycle</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/07/life-cycle/" class="post-title-link" itemprop="url">life-cycle</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T14:11:34+08:00">
-                2019-08-07
-              </time>
-            
+              <span class="post-meta-item-text">发表于</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="创建时间：2019-08-07 14:11:34" itemprop="dateCreated datePublished" datetime="2019-08-07T14:11:34+08:00">2019-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-14 15:46:47" itemprop="dateModified" datetime="2019-11-14T15:46:47+08:00">2019-11-14</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -421,179 +282,123 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h3 id="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"><a href="#&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"></a>&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;</h3><h4 id="&#x573A;&#x666F;&#x63CF;&#x8FF0;"><a href="#&#x573A;&#x666F;&#x63CF;&#x8FF0;" class="headerlink" title="&#x573A;&#x666F;&#x63CF;&#x8FF0;"></a>&#x573A;&#x666F;&#x63CF;&#x8FF0;</h4><p>A&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E86;B&#x7EC4;&#x4EF6;&#xFF0C;B&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;C&#x4F9D;&#x8D56;A&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8BF7;&#x6C42;</p>
-<p><img src="/2019/08/07/life-cycle/context1.png" alt="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;" title="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;"></p>
-<h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6848;"></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;</h4><ul>
-<li>&#x4F7F;&#x7528;props&#x9010;&#x7EA7;&#x4F20;&#x9012;<br><img src="/2019/08/07/life-cycle/context2.png" alt="props&#x4F20;&#x9012;&#x56FE;" title="props&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;props&#x9010;&#x7EA7;&#x4F20;&#x9012;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x503C;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#x4F7F;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x592A;&#x8FC7;&#x590D;&#x6742;&#xFF0C;&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E0D;&#x6DF1;&#x5012;&#x4E5F;&#x8FD8;&#x597D;&#xFF0C;&#x4E00;&#x65E6;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x592A;&#x6DF1;&#x540E;&#x671F;&#x7EF4;&#x62A4;&#x4F1A;&#x5F88;&#x96BE;&#x3002;</li>
-<li>&#x4F7F;&#x7528;&#x4E0A;&#x4E0B;&#x6587;<blockquote>
-<p>context&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x9700;&#x4E3A;&#x6BCF;&#x5C42;&#x7EC4;&#x4EF6;&#x624B;&#x52A8;&#x6DFB;&#x52A0;props&#x5C31;&#x80FD;&#x5728;&#x7EC4;&#x4EF6;&#x6811;&#x95F4;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7684;&#x65B9;&#x6CD5;</p>
-</blockquote>
-</li>
-</ul>
-<p><img src="/2019/08/07/life-cycle/context3.png" alt="context&#x4F20;&#x9012;&#x56FE;" title="context&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;context&#x751F;&#x6210;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EA7;&#xFF0C;&#x5B50;&#x7EA7;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x53BB;&#x4F20;&#x9012;props</p>
-<p>&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#xFF0C;&#x679C;&#x65AD;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x79CD;&#xFF01;context&#x65E0;&#x654C;&#xFF01;</p>
-<h4 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h4><p>&#x4E00;&#x5207;&#x90FD;&#x5411;&#x7740;&#x9884;&#x671F;&#x6709;&#x6761;&#x4E0D;&#x7D0A;&#x7684;&#x8FDB;&#x884C;~&#x5C31;&#x5728;&#x8FD9;&#x65F6;&#x95EE;&#x9898;&#x6765;&#x4E86;&#x2014;&#x2014;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x786E;&#x901A;&#x8FC7;context&#x8DE8;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x751F;&#x4EA7;&#x8005;&#x4F20;&#x9012;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x662F;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x66F4;&#x65B0;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;&#x751F;&#x4EA7;&#x8005;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;componentDidMount&#x4E2D;&#x6709;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x53BB;&#x66F4;&#x65B0;context&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;componentDidMount&#x4E2D;&#x5374;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x8FD9;&#x4E2A;&#x503C;&#x3002;</p>
-<h4 id="&#x95EE;&#x9898;&#x6392;&#x67E5;"><a href="#&#x95EE;&#x9898;&#x6392;&#x67E5;" class="headerlink" title="&#x95EE;&#x9898;&#x6392;&#x67E5;"></a>&#x95EE;&#x9898;&#x6392;&#x67E5;</h4><p>&#x901A;&#x8FC7;debugger&#x53D1;&#x73B0;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x7684;context&#x5E76;&#x6CA1;&#x6709;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x9884;&#x6599;&#x7684;&#x662F;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x7684;&#x503C;&#x3002;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x5462;&#xFF1F;&#x660E;&#x660E;&#x5DF2;&#x7ECF;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;&#x8BF7;&#x6C42;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5440;&#xFF01;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x5462;&#xFF1F;&#x7B49;&#x7B49;&#x2026;&#x6211;&#x4EEC;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x7684;didMount&#x91CC;&#x9762;&#x2026;&#x731C;&#x6D4B;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4E8E;&#x662F;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x756A;&#x6D4B;&#x8BD5;&#x3002;</p>
-<h4 id="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"><a href="#&#x62E8;&#x5F00;&#x4E91;&#x96FE;" class="headerlink" title="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"></a>&#x62E8;&#x5F00;&#x4E91;&#x96FE;</h4><p><img src="/2019/08/07/life-cycle/context4.png" alt="context&#x6D4B;&#x8BD5;" title="context&#x6D4B;&#x8BD5;"><br>&#x7531;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x5927;&#x81F4;&#x4E3A;&#xFF1A;</p>
-<ol>
-<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;render&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</li>
-<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render</li>
-<li>&#x5982;&#x679C;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FD8;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x5219;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x3002;</li>
-<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount</li>
-<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;&#x7684;didMount&#x3002;<br><img src="/2019/08/07/life-cycle/context5.png" alt="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;" title="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;"></li>
-</ol>
-<h4 id="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"><a href="#&#x6700;&#x7EC8;&#x89E3;&#x51B3;" class="headerlink" title="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"></a>&#x6700;&#x7EC8;&#x89E3;&#x51B3;</h4><p>&#x65E2;&#x7136;&#x660E;&#x767D;&#x4E86;render&#x7684;&#x4E00;&#x4E2A;&#x5173;&#x7CFB;&#xFF0C;&#x5C31;&#x5F88;&#x597D;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;update&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x76D1;&#x542C;&#xFF0C;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x66F4;&#x884C;&#x5C31;ok&#x4E86;&#xFF01;nice~</p>
-
-          
+          <h3 id="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"><a href="#&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"></a>&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;</h3><h4 id="&#x573A;&#x666F;&#x63CF;&#x8FF0;"><a href="#&#x573A;&#x666F;&#x63CF;&#x8FF0;" class="headerlink" title="&#x573A;&#x666F;&#x63CF;&#x8FF0;"></a>&#x573A;&#x666F;&#x63CF;&#x8FF0;</h4><p>A&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E86;B&#x7EC4;&#x4EF6;&#xFF0C;B&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;C&#x4F9D;&#x8D56;A&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8BF7;&#x6C42;</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/07/life-cycle/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
+
 
 
           </div>
           
 
-
-          
-
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">M</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">M</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
 
-          <nav class="site-state motion-element">
 
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
-
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">M</span>
-
-  
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
 
         
+
+
+
+
+
 
 
 
@@ -604,31 +409,15 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -645,107 +434,9 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
 
   
 
