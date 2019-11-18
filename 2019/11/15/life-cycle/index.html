@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="M">
+
+
+
+
+
+<title>life-cycle | M</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">M&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">M&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">life-cycle</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">M</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十一月 15, 2019&nbsp;&nbsp;15:28:50</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"><a href="#&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;" class="headerlink" title="&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;"></a>&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x95EE;&#x9898;&#x5F15;&#x53D1;&#x7684;&#x601D;&#x8003;</h3><h4 id="&#x573A;&#x666F;&#x63CF;&#x8FF0;"><a href="#&#x573A;&#x666F;&#x63CF;&#x8FF0;" class="headerlink" title="&#x573A;&#x666F;&#x63CF;&#x8FF0;"></a>&#x573A;&#x666F;&#x63CF;&#x8FF0;</h4><p>A&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E86;B&#x7EC4;&#x4EF6;&#xFF0C;B&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;C&#x4F9D;&#x8D56;A&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8BF7;&#x6C42;</p>
+<p><img src="/2019/11/15/life-cycle/context1.png" alt="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;" title="&#x5D4C;&#x5957;&#x5927;&#x610F;&#x56FE;"></p>
+<h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6848;"></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;</h4><ul>
+<li>&#x4F7F;&#x7528;props&#x9010;&#x7EA7;&#x4F20;&#x9012;<br><img src="/2019/11/15/life-cycle/context2.png" alt="props&#x4F20;&#x9012;&#x56FE;" title="props&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;props&#x9010;&#x7EA7;&#x4F20;&#x9012;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x503C;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#x4F7F;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x592A;&#x8FC7;&#x590D;&#x6742;&#xFF0C;&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E0D;&#x6DF1;&#x5012;&#x4E5F;&#x8FD8;&#x597D;&#xFF0C;&#x4E00;&#x65E6;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x592A;&#x6DF1;&#x540E;&#x671F;&#x7EF4;&#x62A4;&#x4F1A;&#x5F88;&#x96BE;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x4E0A;&#x4E0B;&#x6587;<blockquote>
+<p>context&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x9700;&#x4E3A;&#x6BCF;&#x5C42;&#x7EC4;&#x4EF6;&#x624B;&#x52A8;&#x6DFB;&#x52A0;props&#x5C31;&#x80FD;&#x5728;&#x7EC4;&#x4EF6;&#x6811;&#x95F4;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7684;&#x65B9;&#x6CD5;</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="/2019/11/15/life-cycle/context3.png" alt="context&#x4F20;&#x9012;&#x56FE;" title="context&#x4F20;&#x9012;&#x56FE;"><br>&#x901A;&#x8FC7;context&#x751F;&#x6210;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EA7;&#xFF0C;&#x5B50;&#x7EA7;&#x8FDB;&#x884C;&#x6D88;&#x8D39;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x7EA7;&#x4E00;&#x7EA7;&#x53BB;&#x4F20;&#x9012;props</p>
+<p>&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#xFF0C;&#x679C;&#x65AD;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x79CD;&#xFF01;context&#x65E0;&#x654C;&#xFF01;</p>
+<h4 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h4><p>&#x4E00;&#x5207;&#x90FD;&#x5411;&#x7740;&#x9884;&#x671F;&#x6709;&#x6761;&#x4E0D;&#x7D0A;&#x7684;&#x8FDB;&#x884C;~&#x5C31;&#x5728;&#x8FD9;&#x65F6;&#x95EE;&#x9898;&#x6765;&#x4E86;&#x2014;&#x2014;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x786E;&#x901A;&#x8FC7;context&#x8DE8;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x751F;&#x4EA7;&#x8005;&#x4F20;&#x9012;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x662F;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x66F4;&#x65B0;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x91CC;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;&#x751F;&#x4EA7;&#x8005;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;componentDidMount&#x4E2D;&#x6709;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x53BB;&#x66F4;&#x65B0;context&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;componentDidMount&#x4E2D;&#x5374;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x8FD9;&#x4E2A;&#x503C;&#x3002;</p>
+<h4 id="&#x95EE;&#x9898;&#x6392;&#x67E5;"><a href="#&#x95EE;&#x9898;&#x6392;&#x67E5;" class="headerlink" title="&#x95EE;&#x9898;&#x6392;&#x67E5;"></a>&#x95EE;&#x9898;&#x6392;&#x67E5;</h4><p>&#x901A;&#x8FC7;debugger&#x53D1;&#x73B0;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x7684;context&#x5E76;&#x6CA1;&#x6709;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x9884;&#x6599;&#x7684;&#x662F;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x7684;&#x503C;&#x3002;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x5462;&#xFF1F;&#x660E;&#x660E;&#x5DF2;&#x7ECF;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;&#x8BF7;&#x6C42;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5440;&#xFF01;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x5462;&#xFF1F;&#x7B49;&#x7B49;&#x2026;&#x6211;&#x4EEC;&#x5728;&#x751F;&#x4EA7;&#x7EC4;&#x4EF6;&#x7684;didMount&#x91CC;&#x9762;&#x2026;&#x731C;&#x6D4B;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x751F;&#x547D;&#x5468;&#x671F;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4E8E;&#x662F;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x756A;&#x6D4B;&#x8BD5;&#x3002;</p>
+<h4 id="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"><a href="#&#x62E8;&#x5F00;&#x4E91;&#x96FE;" class="headerlink" title="&#x62E8;&#x5F00;&#x4E91;&#x96FE;"></a>&#x62E8;&#x5F00;&#x4E91;&#x96FE;</h4><p><img src="/2019/11/15/life-cycle/context4.png" alt="context&#x6D4B;&#x8BD5;" title="context&#x6D4B;&#x8BD5;"><br>&#x7531;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;&#x5927;&#x81F4;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;render&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;</li>
+<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;render</li>
+<li>&#x5982;&#x679C;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x8FD8;&#x6709;&#x5B50;&#x7EC4;&#x4EF6;&#x5219;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x3002;</li>
+<li>&#x6267;&#x884C;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;didMount</li>
+<li>&#x6267;&#x884C;&#x7236;&#x7EC4;&#x4EF6;&#x7684;didMount&#x3002;<br><img src="/2019/11/15/life-cycle/context5.png" alt="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;" title="&#x6267;&#x884C;&#x987A;&#x5E8F;&#x56FE;&#x4F8B;"></li>
+</ol>
+<h4 id="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"><a href="#&#x6700;&#x7EC8;&#x89E3;&#x51B3;" class="headerlink" title="&#x6700;&#x7EC8;&#x89E3;&#x51B3;"></a>&#x6700;&#x7EC8;&#x89E3;&#x51B3;</h4><p>&#x65E2;&#x7136;&#x660E;&#x767D;&#x4E86;render&#x7684;&#x4E00;&#x4E2A;&#x5173;&#x7CFB;&#xFF0C;&#x5C31;&#x5F88;&#x597D;&#x89E3;&#x51B3;&#x4E86;&#xFF0C;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;update&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x9762;&#x76D1;&#x542C;&#xFF0C;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x66F4;&#x884C;&#x5C31;ok&#x4E86;&#xFF01;nice~</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>M</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://yoursite.com/2019/11/15/life-cycle/">http://yoursite.com/2019/11/15/life-cycle/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY<strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();" target="_blank" rel="noopener">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2019/11/15/Weird-character/">Weird-character</a>
+            
+            
+            <a class="next" rel="next" href="/2019/11/15/debounceAndThrottle/">debounceAndThrottle</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© M | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
