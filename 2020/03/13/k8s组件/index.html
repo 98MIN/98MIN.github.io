@@ -13,7 +13,7 @@
 
 
 
-<title>debounceAndThrottle | M</title>
+<title>k8s组件 | M</title>
 
 
 
@@ -182,7 +182,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">debounceAndThrottle</h1>
+            <h1 class="post-title">k8s组件</h1>
             
                 <div class="post-meta">
                     
@@ -191,13 +191,13 @@
 
                     
                         <span class="post-time" style="padding-left:10px">
-                        Date: <a href="#">十一月 15, 2019&nbsp;&nbsp;15:28:50</a>
+                        Date: <a href="#">三月 13, 2020&nbsp;&nbsp;9:45:08</a>
                         </span>
                     
 
-                    <span style="padding-left:10px">字数统计:</span><a href="#" style="padding:5px">202字</a>
+                    <span style="padding-left:10px">字数统计:</span><a href="#" style="padding:5px">411字</a>
 
-                    <span style="padding-left:10px">阅读时长</span><span>≈</span><a href="#" style="padding:5px">1分钟</a>
+                    <span style="padding-left:10px">阅读时长</span><span>≈</span><a href="#" style="padding:5px">2分钟</a>
 
                     
                 </div>
@@ -205,23 +205,17 @@
         </header>
 
         <div class="post-content">
-            <h3 id="&#x9632;&#x6296;&#x8282;&#x6D41;"><a href="#&#x9632;&#x6296;&#x8282;&#x6D41;" class="headerlink" title="&#x9632;&#x6296;&#x8282;&#x6D41;"></a>&#x9632;&#x6296;&#x8282;&#x6D41;</h3><h4 id="&#x9632;&#x6296;"><a href="#&#x9632;&#x6296;" class="headerlink" title="&#x9632;&#x6296;"></a>&#x9632;&#x6296;</h4><blockquote>
-<p>&#x5F53;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x9891;&#x7E41;&#x88AB;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x4E2D;&#x95F4;&#x95F4;&#x9694;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x65B9;&#x6CD5;&#x624D;&#x4F1A;&#x6267;&#x884C;</p>
+            <h3 id="etcd"><a href="#etcd" class="headerlink" title="etcd"></a>etcd</h3><p>etcd &#x4FDD;&#x5B58;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x72B6;&#x6001;&#xFF1B;</p>
+<h4 id="&#x7279;&#x70B9;"><a href="#&#x7279;&#x70B9;" class="headerlink" title="&#x7279;&#x70B9;"></a>&#x7279;&#x70B9;</h4><blockquote>
+<p>&#x57FA;&#x4E8E;key-value&#x952E;&#x503C;&#x5BF9;&#x5F62;&#x5F0F;&#x7684;&#x5B58;&#x50A8;</p>
 </blockquote>
-<h4 id="&#x9632;&#x6296;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;"><a href="#&#x9632;&#x6296;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;" class="headerlink" title="&#x9632;&#x6296;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;"></a>&#x9632;&#x6296;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</h4><ul>
-<li>&#x8054;&#x60F3;&#x8F93;&#x5165;&#x6846;&#xFF1A;&#x7528;&#x6237;&#x8F93;&#x5165;&#x65F6;&#x8981;&#x8FDB;&#x884C;&#x8054;&#x60F3;&#x53CD;&#x9988;</li>
-<li>&#x76D1;&#x542C;&#x5C4F;&#x5E55;resize&#xFF1A;&#x5728;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x5916;&#x5305;&#x88F9;&#x4E00;&#x5C42;&#x9632;&#x6296;&#x51FD;&#x6570;</li>
-</ul>
-<h4 id="&#x9632;&#x6296;&#x51FD;&#x6570;&#x5B9E;&#x73B0;"><a href="#&#x9632;&#x6296;&#x51FD;&#x6570;&#x5B9E;&#x73B0;" class="headerlink" title="&#x9632;&#x6296;&#x51FD;&#x6570;&#x5B9E;&#x73B0;"></a>&#x9632;&#x6296;&#x51FD;&#x6570;&#x5B9E;&#x73B0;</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn,delay</span>)</span>{</span><br><span class="line">  <span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">    clearTimeOut(timer)</span><br><span class="line">    timer = setTimeOut(<span class="function"><span class="params">()</span> =&gt;</span> {</span><br><span class="line">      fn.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">    },delay)</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-
-<h4 id="&#x8282;&#x6D41;"><a href="#&#x8282;&#x6D41;" class="headerlink" title="&#x8282;&#x6D41;"></a>&#x8282;&#x6D41;</h4><blockquote>
-<p>&#x5F53;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x9891;&#x7E41;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x53EA;&#x6709;&#x7ECF;&#x8FC7;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E4B;&#x540E;&#x65B9;&#x6CD5;&#x624D;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
-</blockquote>
-<h4 id="&#x8282;&#x6D41;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;"><a href="#&#x8282;&#x6D41;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x8282;&#x6D41;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;"></a>&#x8282;&#x6D41;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;</h4><ul>
-<li>&#x76D1;&#x542C;&#x6EDA;&#x52A8;&#x4E8B;&#x4EF6;</li>
-<li>&#x9F20;&#x6807;&#x4E0D;&#x65AD;&#x70B9;&#x51FB;&#x89E6;&#x53D1;</li>
-</ul>
-<h4 id="&#x8282;&#x6D41;&#x51FD;&#x6570;&#x5B9E;&#x73B0;"><a href="#&#x8282;&#x6D41;&#x51FD;&#x6570;&#x5B9E;&#x73B0;" class="headerlink" title="&#x8282;&#x6D41;&#x51FD;&#x6570;&#x5B9E;&#x73B0;"></a>&#x8282;&#x6D41;&#x51FD;&#x6570;&#x5B9E;&#x73B0;</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, delay</span>) </span>{</span><br><span class="line">  <span class="keyword">let</span> time = <span class="string">&apos;&apos;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> newDate = <span class="built_in">Date</span>.now()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (newDate - time &gt; delay) {</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, [...arguments])</span><br><span class="line">      time = newDate</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="api-server"><a href="#api-server" class="headerlink" title="api-server"></a>api-server</h3><p>api-server &#x63D0;&#x4F9B;&#x4E86;&#x8D44;&#x6E90;&#x64CD;&#x4F5C;&#x7684;&#x552F;&#x4E00;&#x5165;&#x53E3;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x8BA4;&#x8BC1;&#x3001;&#x6388;&#x6743;&#x3001;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x3001;API&#x6CE8;&#x518C;&#x548C;&#x53D1;&#x73B0;&#x7B49;&#x673A;&#x5236;&#xFF1B;</p>
+<p>&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x5404;&#x79CD;&#x64CD;&#x4F5C;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;api-server&#x63D0;&#x4F9B;&#x7684;api&#x6765;&#x8FDB;&#x884C;&#x3002;</p>
+<p>api-server&#x7C7B;&#x4F3C;&#x4E00;&#x5EA7;&#x6865;&#x6881;&#x4E0E;etcd&#x4EA4;&#x4E92;&#xFF0C;&#x5E76;&#x628A;&#x8D44;&#x6E90;&#x66F4;&#x65B0;&#x7684;&#x6D88;&#x606F;&#x901A;&#x77E5;&#x7ED9;etcd&#xFF0C;etcd&#x5BF9;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x3002;</p>
+<h3 id="controller-manager"><a href="#controller-manager" class="headerlink" title="controller manager"></a>controller manager</h3><p>controller manager &#x8D1F;&#x8D23;&#x7EF4;&#x62A4;&#x96C6;&#x7FA4;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6BD4;&#x5982;&#x6545;&#x969C;&#x68C0;&#x6D4B;&#x3001;&#x81EA;&#x52A8;&#x6269;&#x5C55;&#x3001;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x7B49;&#xFF1B;</p>
+<h3 id="scheduler"><a href="#scheduler" class="headerlink" title="scheduler"></a>scheduler</h3><p>scheduler &#x8D1F;&#x8D23;&#x8D44;&#x6E90;&#x7684;&#x8C03;&#x5EA6;&#xFF0C;&#x6309;&#x7167;&#x9884;&#x5B9A;&#x7684;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x5C06;&#x5B9E;&#x4F8B;&#xFF08;Pod&#xFF09;&#x8C03;&#x5EA6;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x4E3B;&#x673A;&#x4E0A;&#xFF1B;<br>&#x9009;&#x62E9;&#x6700;&#x4F18;&#x65B9;&#x6848;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#x3002;&#x82E5;&#x5236;&#x5B9A;&#x4E86;nodeSelector&#x6216;&#x8005;nodeName&#x5C06;&#x8C03;&#x5EA6;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x8282;&#x70B9;&#xFF1B;&#x82E5;&#x6240;&#x6709;&#x8282;&#x70B9;&#x90FD;&#x4E0D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#xFF0C;pod&#x5C06;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x672A;&#x8C03;&#x5EA6;&#x72B6;&#x6001;(pending)</p>
+<h3 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h3><p>kubelet &#x8D1F;&#x8D23;&#x7EF4;&#x62A4;&#x5BB9;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x8D1F;&#x8D23;&#x5B58;&#x50A8;&#x5377;&#x548C;&#x7F51;&#x7EDC;&#x7684;&#x7BA1;&#x7406;;<br>&#x6BCF;&#x4E2A;Node&#x8282;&#x70B9;&#x4E0A;&#x90FD;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;kubelet&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xFF0C;&#x9ED8;&#x8BA4;&#x76D1;&#x542C;10250&#x7AEF;&#x53E3;&#xFF0C;&#x63A5;&#x6536;&#x5E76;&#x6267;&#x884C;master&#x53D1;&#x6765;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x7BA1;&#x7406;Pod&#x53CA;Pod&#x4E2D;&#x7684;&#x5BB9;&#x5668;&#x3002;&#x6BCF;&#x4E2A;kubelet&#x8FDB;&#x7A0B;&#x4F1A;&#x5728;API Server&#x4E0A;&#x6CE8;&#x518C;&#x8282;&#x70B9;&#x81EA;&#x8EAB;&#x4FE1;&#x606F;&#xFF0C;&#x5B9A;&#x671F;&#x5411;master&#x8282;&#x70B9;&#x6C47;&#x62A5;&#x8282;&#x70B9;&#x7684;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</p>
+<h3 id="kube-proxy"><a href="#kube-proxy" class="headerlink" title="kube-proxy"></a>kube-proxy</h3><p>&#x6BCF;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x90FD;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;kube-proxy&#x670D;&#x52A1;&#xFF0C;&#x5B83;&#x76D1;&#x542C;API Server&#x4E2D;service&#x548C;Pod&#x7684;&#x53D8;&#x5316;&#x60C5;&#x51B5;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;userspace&#x3001;iptables&#x3001;ipvs&#x7B49;proxier&#x6765;&#x4E3A;&#x670D;&#x52A1;&#x914D;&#x7F6E;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</p>
 
         </div>
 
@@ -236,7 +230,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/2019/11/15/debounceAndThrottle/">http://yoursite.com/2019/11/15/debounceAndThrottle/</a></span>
+                        <span><a href="http://yoursite.com/2020/03/13/k8s%E7%BB%84%E4%BB%B6/">http://yoursite.com/2020/03/13/k8s%E7%BB%84%E4%BB%B6/</a></span>
                     </p>
                 
                 
@@ -273,10 +267,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/11/15/life-cycle/">life-cycle</a>
             
-            
-            <a class="next" rel="next" href="/2019/11/15/currying/">currying</a>
+            <a class="next" rel="next" href="/2019/11/21/Weird-character/">Weird-character</a>
             
         </section>
 
